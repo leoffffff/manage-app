@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
 
   def new
+    sign_out
   end
 
   def create
