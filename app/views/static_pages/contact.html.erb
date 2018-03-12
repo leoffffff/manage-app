@@ -1,6 +1,212 @@
-<% provide(:title, 'Contact') %>
-<h1>Contact</h1>
-<p>
-  Contact Ruby on Rails Tutorial about the sample app at the
-  <a href="http://railstutorial.org/contact">contact page</a>.
-</p>
+<!--
+<html>
+<head>
+	<meta charset="utf-8"> 
+	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">  
+</head>
+<body>
+
+<form class="form-horizontal">
+  <div class="form-group">
+    <label for="exampleInputName2">Name</label>
+    <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail2">Email</label>
+    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
+  </div>
+
+  <button type="submit" class="btn btn-default">Edit</button>
+</form>
+
+</body>
+</html>
+-->
+
+<head>
+	<meta charset="utf-8"> 
+	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">  
+</head>
+<body class="gray-bg">
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="panel panel-info">
+        <div class="panel-heading"><i class="fa fa-info-circle"></i>　<b>请核实、完善个人基本信息。如关键项目需更改，请与辅导员或管理员联系。</b></div>
+    </div>
+        <form class="form-horizontal m-t" id="edit_form" action="?a=stu&amp;m=ajax_info_save" novalidate="novalidate">
+
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>个人信息</h5>
+                <div class="ibox-tools">
+                    <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                </div>
+            </div>
+            <div class="ibox-content">
+            	<div class="form-group js-not-deal">
+                    <label class="col-sm-2 control-label">姓　名</label>
+                    <div class="col-sm-3">
+                        <div><input type="text" class="form-control" name="s_name" value="陈杰锋" readonly="">
+                        </div>                    </div>
+                    <label class="col-sm-2 control-label">学　号</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" name="s_num" value="3113008213" readonly="">
+                    </div>
+                </div>
+
+                <div class="form-group" id="s_birthday">
+                    <label class="col-sm-2 control-label">出生日期</label>
+                    <div class="col-sm-3">
+                        <div class="input-group date">
+                            <input type="text" class="form-control" name="s_birthday" value="1994-08-09" maxlength="10">
+                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">
+                                <span style="color: red">*</span>
+                                生源地区
+                            </label>
+                            <div class="col-sm-8">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="s_local_cn" id="s_local_cn" value="广东省">
+                                </div>
+                                <span class="help-block help-init"><i class="fa fa-info-circle"></i> 一般为入学前时户口所在地，高考时本人户口所在地或父母户口所在地 </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">婚姻状况</label>
+                            <div class="col-sm-6">
+                                <div class="input-group">
+                                    <select class="form-control m-b" name="s_marriage" "=""><option value="未婚" selected="selected">未婚</option><option value="已婚">已婚</option></select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">身　高</label>
+                            <div class="col-sm-6">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="s_stature" value="170"> <span class="input-group-addon"> CM </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">经济状况</label>
+                            <div class="col-sm-3">
+                                <div class="input-group">
+                                    <select class="form-control m-b" name="s_economy" "=""><option value="一般" selected="selected">一般</option><option value="很好">很好</option><option value="较好">较好</option><option value="困难">困难</option><option value="比较困难">比较困难</option><option value="非常困难">非常困难</option></select>
+                                </div>                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">体　重</label>
+                            <div class="col-sm-6">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="s_weight" value="53"> <span class="input-group-addon"> KG </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">
+                        <span style="color: red">*</span>
+                        户口地区
+                    </label>
+                    <div class="col-sm-4">
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="s_hk_local_cn" id="s_hk_local_cn" value="广东省">
+                        </div> 
+                     </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>联系信息</h5>
+                <div class="ibox-tools">
+                    <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                </div>
+            </div>
+            <div class="ibox-content">
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label"><span style="color: red">*</span>手　机</label>
+                            <div class="col-sm-6">
+                                <div><input type="text" class="form-control" name="s_contact_mobile" value="18888888"></div>                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">QQ　号</label>
+                            <div class="col-sm-6">
+                                <div><input type="text" class="form-control" name="s_contact_qq" value="6666666" maxlength="20"></div>                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label"><span style="color: red">*</span>家庭电话</label>
+                            <div class="col-sm-6">
+                                <div><input type="text" class="form-control" name="s_contact_hometel" value="8888888"></div>
+                                <span class="help-block help-init"><i class="fa fa-info-circle"></i> 固定电话，格式：区号-电话号或手机号 </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label"><span style="color: red">*</span>邮　箱</label>
+                            <div class="col-sm-6">
+                                <div><input type="text" class="form-control" name="s_contact_email" value="6666666@qq.com"></div>                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label"><span style="color: red">*</span>家庭地址</label>
+                            <div class="col-sm-6">
+                                <div><input type="text" class="form-control" name="s_contact_homeaddr" value="广东"></div>                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label"><span style="color: red">*</span>邮　编</label>
+                            <div class="col-sm-6">
+                                <div><input type="text" class="form-control" name="s_contact_homezip" value="526100" maxlength="8"></div>                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ibox-content">
+          <div class="row">
+            <div class="col-sm-6 text-right"><button class="btn btn-primary btn_save_basic" type="button"><i class="fa fa-check"></i>　提　交　</button>　</div>
+          </div>
+        </div>
+    </form>
+</div>
+
+
+<script type="text/javascript">
+	
+</script>
+</body>
