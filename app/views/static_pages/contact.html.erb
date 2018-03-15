@@ -25,7 +25,8 @@
 
 <head>
 	<meta charset="utf-8"> 
-	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">  
+	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css"> 
+    <link href="http://cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">  
 </head>
 <body class="gray-bg">
 <div class="wrapper wrapper-content animated fadeInRight">
@@ -35,18 +36,14 @@
         <form class="form-horizontal m-t" id="edit_form" action="?a=stu&amp;m=ajax_info_save" novalidate="novalidate">
 
         <div class="ibox float-e-margins">
-            <div class="ibox-title">
-                <h5>个人信息</h5>
-                <div class="ibox-tools">
-                    <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                </div>
-            </div>
+            <h5 class="text-center"><strong>个人信息</strong></h5>
             <div class="ibox-content">
             	<div class="form-group js-not-deal">
                     <label class="col-sm-2 control-label">姓　名</label>
                     <div class="col-sm-3">
                         <div><input type="text" class="form-control" name="s_name" value="陈杰锋" readonly="">
-                        </div>                    </div>
+                        </div> 
+                    </div>
                     <label class="col-sm-2 control-label">学　号</label>
                     <div class="col-sm-3">
                         <input type="text" class="form-control" name="s_num" value="3113008213" readonly="">
@@ -56,7 +53,7 @@
                 <div class="form-group" id="s_birthday">
                     <label class="col-sm-2 control-label">出生日期</label>
                     <div class="col-sm-3">
-                        <div class="input-group date">
+                        <div class="input-group date" id="datetimepicker1">
                             <input type="text" class="form-control" name="s_birthday" value="1994-08-09" maxlength="10">
                             <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                         </div>
@@ -142,12 +139,6 @@
         </div>
 
         <div class="ibox float-e-margins">
-            <div class="ibox-title">
-                <h5>联系信息</h5>
-                <div class="ibox-tools">
-                    <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                </div>
-            </div>
             <div class="ibox-content">
 
                 <div class="row">
@@ -207,6 +198,13 @@
 
 
 <script type="text/javascript">
-	
+ $(function() {
+        $('#datetimepicker1').datetimepicker({ 
+        　　minView: "month", //选择日期后，不会再跳转去选择时分秒 
+        　　format: "yyyy-mm-dd", //选择日期后，文本框显示的日期格式 
+    　　  　language: 'zh-CN', //汉化 
+　     　   autoclose:true //选择日期后自动关闭 
+        });
+ });
 </script>
 </body>
