@@ -1,0 +1,105 @@
+<%= form_for(@resume) do |f| %>
+  <% if @resume.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@resume.errors.count, "error") %> prohibited this resume from being saved:</h2>
+
+      <ul>
+      <% @resume.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :resume_name %><br />
+    <%= f.text_field :resume_name %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :profession %><br />
+    <%= f.text_field :profession %>
+  </div>
+  <div class="field">
+    <%= f.label :birthplace %><br />
+    <%= f.text_field :birthplace %>
+  </div>
+  <div class="field">
+    <%= f.label :area %><br />
+    <%= f.text_field :area %>
+  </div>
+  <div class="field">
+    <%= f.label :sex %><br />
+    <%= f.text_field :sex %>
+  </div>
+  <div class="field">
+    <%= f.label :birthday_year %><br />
+    <%= f.number_field :birthday_year %>
+  </div>
+  <div class="field">
+    <%= f.label :education %><br />
+    <%= f.text_field :education %>
+  </div>
+  <div class="field">
+    <%= f.label :marriage %><br />
+    <%= f.text_field :marriage %>
+  </div>
+  <div class="field">
+    <%= f.label :height %><br />
+    <%= f.number_field :height %>
+  </div>
+  <div class="field">
+    <%= f.label :work_experience %><br />
+    <%= f.text_field :work_experience %>
+  </div>
+  <div class="field">
+    <%= f.label :form %><br />
+    <%= f.text_field :form %>
+  </div>
+  <div class="field">
+    <%= f.label :job %><br />
+    <%= f.text_field :job %>
+  </div>
+  <div class="field">
+    <%= f.label :area %><br />
+    <%= f.text_field :area %>
+  </div>
+  <div class="field">
+    <%= f.label :salary %><br />
+    <%= f.text_field :salary %>
+  </div>
+  <div class="field">
+    <%= f.label :phone %><br />
+    <%= f.number_field :phone %>
+  </div>
+  <div class="field">
+    <%= f.label :QQ %><br />
+    <%= f.number_field :QQ %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :blog %><br />
+    <%= f.text_field :blog %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :value %><br />
+    <%= f.text_area :value %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

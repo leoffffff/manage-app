@@ -1,8 +1,8 @@
 SampleApp::Application.routes.draw do
-  
+
   get "welcome/index"
 
-  resources :users, :sessions
+  resources :users, :sessions, :informations, :resumes
   
   match '/signup', to: 'users#new'
   match '/signin', to: 'sessions#new'
@@ -12,7 +12,7 @@ SampleApp::Application.routes.draw do
 
   root to: 'sessions#new'
 
-
+  match '/home',    to: 'static_pages#home'
   match '/help',    to: 'static_pages#help'
   match '/about',   to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'

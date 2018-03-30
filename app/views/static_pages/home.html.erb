@@ -1,13 +1,175 @@
-<div class="center hero-unit">
-  <h1>Welcome to the Sample App</h1>
+<head>
+	<meta charset="utf-8"> 
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0-beta.3/css/bootstrap-grid.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link href="http://cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">  
+</head>
+<body class="gray-bg">
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-4 ui-sortable">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>提醒</h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link ui-sortable"><i class="fa fa-chevron-up"></i></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-wrench"></i></a>
+                        <a class="close-link"><i class="fa fa-times"></i></a>
+                    </div>
+                </div>
+                <div class="ibox-content no-padding">
+                    <ul class="list-group" id="reminderlist">
+    <li class="list-group-item">
+        最近没有提醒记录
+    </li>
+</ul>
+                </div>
+            </div>
 
-  <h2>
-    This is the home page for the
-    <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
-    sample application.
-  </h2>
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>最新通知</h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link ui-sortable"><i class="fa fa-chevron-up"></i></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-wrench"></i></a>
+                        <a class="close-link"><i class="fa fa-times"></i></a>
+                    </div>
+                </div>
+                <div class="ibox-content no-padding">
+                    <ul class="list-group" id="noticelist">
+    <li class="list-group-item">
+        <p><a href="http://www.jluzh.com/2018/0315/c62a115311/page.htm" target="_blank">关于2018年上半年全国大学英语四、六级考试报名工作的通知 </a></p>
+        <small class="block text-muted"><i class="fa fa-clock-o"></i> 03-23 11:24</small>
+    </li>
 
-  <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+    <li class="list-group-item">
+        <p><a href="http://www.jluzh.com/2018/0103/c62a114148/page.htm" target="_blank">吉林大学珠海学院2017届毕业生就业质量年度报告</a></p>
+        <small class="block text-muted"><i class="fa fa-clock-o"></i> 03-23 15:02</small>
+    </li>
+
+    <li class="list-group-item">
+        <p><a href="https://hr.jluzh.com/1091/list.htm" target="_blank">院长办公室招聘文秘综合岗位</a></p>
+        <small class="block text-muted"><i class="fa fa-clock-o"></i> 03-26 10:30</small>
+    </li>
+
+    <li class="list-group-item">
+        <p><a href="http://www.jluzh.com/2017/1117/c62a111357/page.htm" target="_blank">关于组织2018年上半年汉语教师志愿者报名的紧急通知</a></p>
+        <small class="block text-muted"><i class="fa fa-clock-o"></i> 03-26 15:59</small>
+    </li>
+</ul>	
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-6 ui-sortable">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>今明活动预告</h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link ui-sortable"><i class="fa fa-chevron-up"></i></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu dropdown-user">
+                            <li><a href="#">全部</a></li>
+                            <li><a href="#">仅看已报名</a></li>
+                            <li><a href="#">仅看未报名</a></li>
+                        </ul>
+                        <a class="close-link"><i class="fa fa-times"></i></a>
+                    </div>
+                </div>
+                <div class="ibox-content timeline">
+                    <div class="timeline-item" id="activitylist">
+    <div class="row">
+        <div class="col-xs-3 date ui-sortable">
+            <i class="fa fa-clock-o"></i> <br>03-31 09:00
+        </div>
+        <div class="col-xs-7 content ui-sortable">
+            <p class="m-b-xs"><strong>关于开展第五期创新创业训练营的通知</strong></p>
+            <p><i class="fa fa-map-marker"></i> 二教 E106</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-3 date ui-sortable">
+            <i class="fa fa-clock-o"></i> <br>03-29 19:00
+        </div>
+        <div class="col-xs-7 content ui-sortable">
+            <p class="m-b-xs"><strong>（大学城校园）2018广东省OMG实习生招聘及职场公开课</strong></p>
+            <p><i class="fa fa-map-marker"></i> 足球场</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-3 date ui-sortable">
+            <i class="fa fa-clock-o"></i> <br>03-28 19:00
+        </div>
+        <div class="col-xs-7 content ui-sortable">
+            <p class="m-b-xs"><strong>好未来爱智康校园宣讲会</strong></p>
+            <p><i class="fa fa-map-marker"></i> 二教 E201</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-3 date ui-sortable">
+            <i class="fa fa-clock-o"></i> <br>03-30 14:00
+        </div>
+        <div class="col-xs-7 content ui-sortable">
+            <p class="m-b-xs"><strong>深圳市德彩光电有限公司宣讲会</strong></p>
+            <p><i class="fa fa-map-marker"></i> 音乐大厅</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-3 date ui-sortable">
+            <i class="fa fa-clock-o"></i> <br>03-28 14:30
+        </div>
+        <div class="col-xs-7 content ui-sortable">
+            <p class="m-b-xs"><strong>中泰集团2018年春季校园招聘宣讲会</strong></p>
+            <p><i class="fa fa-map-marker"></i> 二教 E202</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-3 date ui-sortable">
+            <i class="fa fa-clock-o"></i> <br>03-26 19:00
+        </div>
+        <div class="col-xs-7 content ui-sortable">
+            <p class="m-b-xs"><strong>广州光锥元信息科技有限公司宣讲会</strong></p>
+            <p><i class="fa fa-map-marker"></i> 二教 E205</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-3 date ui-sortable">
+            <i class="fa fa-clock-o"></i> <br>03-28 15:00
+        </div>
+        <div class="col-xs-7 content ui-sortable">
+            <p class="m-b-xs"><strong>ASM中国 春季 校园招聘宣讲会</strong></p>
+            <p><i class="fa fa-map-marker"></i> 二教 E208</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-3 date ui-sortable">
+            <i class="fa fa-clock-o"></i> <br>03-27 15:00
+        </div>
+        <div class="col-xs-7 content ui-sortable">
+            <p class="m-b-xs"><strong>蓝鸽集团有限公司宣讲会</strong></p>
+            <p><i class="fa fa-map-marker"></i> 二教 E188</p>
+        </div>
+    </div>
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
-<%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
+<script type="text/javascript">
+</script>
+
+
+
+</body>
