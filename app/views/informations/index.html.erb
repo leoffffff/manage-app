@@ -1,8 +1,9 @@
 <head>
   <meta charset="utf-8"> 
   <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css"> 
-    <link href="http://cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">  
-</head>
+  <link href="http://cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">  
+  <%= stylesheet_link_tag "style", :media => "all" %> 
+ </head>
 <body class="gray-bg">
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="panel panel-info">
@@ -11,7 +12,7 @@
         <form class="form-horizontal m-t" id="edit_form" action="/informations" method="get" novalidate="novalidate">
 
         <div class="ibox float-e-margins">
-            <h5 class="text-center"><strong>个人信息</strong></h5>
+            <h5 class="text-center"><strong></strong></h5>
             <div class="ibox-content">
               <div class="form-group js-not-deal">
                     <label class="col-sm-2 control-label">姓　名</label>
@@ -156,10 +157,12 @@
                 </div>
             </div>
         </div>
+        <div class="ibox float-e-margins">
         <div class="ibox-content">
           <div class="row">
             <div class="col-sm-6 text-right"><button class="btn btn-primary btn_save_basic" type="button"><i class="fa fa-check"></i>　提　交　</button>　</div>
           </div>
+        </div>
         </div>
     </form>
 </div>

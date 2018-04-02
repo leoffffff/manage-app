@@ -1,7 +1,8 @@
 <head>
     <meta charset="utf-8"> 
     <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css"> 
-  <link href="http://cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"> 
+    <link href="http://cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">  
+    <%= stylesheet_link_tag "style", :media => "all" %> 
 </head>
 
 <body class="gray-bg">
@@ -12,10 +13,9 @@
 
     <div class="row" style="margin-top: -20px;">
       <form class="form-horizontal m-t" id="resume_basic" action="/resumes" method="get" novalidate="novalidate">
-
       <div class="col-sm-12">
         <div class="ibox float-e-margins">
-          <h5 class="text-center"><strong>简历信息</strong></h5>
+          <h5 class="text-center"><strong></strong></h5>
           <div class="ibox-content">
             <div class="row">
               <div class="col-sm-7">
@@ -71,9 +71,11 @@
                     </div>
                   </div>
                 </div>
+                </div>
               </div>
             </div>
           </div>
+        <div class="ibox float-e-margins">
           <div class="ibox-content">
             <div class="row">
               <div class="col-sm-7">
@@ -147,8 +149,11 @@
                   </div>
                 </div>
               </div>
+              </div>
             </div>
           </div>
+
+        <div class="ibox float-e-margins">
           <div class="ibox-content">
             <div class="row">
               <div class="col-sm-7">
@@ -256,10 +261,11 @@
                     <div><input type="text" class="form-control" name="resumes[address]" value="<%= @resume.address %>" maxlength="50"></div>
                   </div>
                 </div>
-
+                </div>
               </div>
             </div>
           </div>
+          <div class="ibox float-e-margins">
           <div class="ibox-content">
             <div class="row">
               <div class="col-sm-7">
@@ -273,7 +279,9 @@
                 </div>
               </div>
             </div>
+            </div>
           </div>
+          <div class="ibox float-e-margins">
           <div class="ibox-content">
             <div class="row">
               <div class="col-sm-6 text-right">
@@ -281,11 +289,11 @@
               </div>
             </div>
           </div>
-
         </div>
       </div>
-      </form>
     </div>
+  </form>
+</div>
 </div>
 <script type="text/javascript">
  $(function() {

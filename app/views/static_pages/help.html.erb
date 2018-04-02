@@ -1,17 +1,137 @@
 <head>
   <meta charset="utf-8"> 
   <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css"> 
-    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <link href="http://cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">  
-</head>
+  <link href="http://cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">  
+  <%= stylesheet_link_tag "style", :media => "all" %>  
+ </head>
 
-<div class="row">
-  <div class="col-sm-12">
-    <div class="ibox float-e-margins">
-      <div class="ibox-title">
-        <h5>宣讲会</h5>
+<style type="text/css">
+  #test{  
+    border-left:none;  
+    border-right:none;
+  }  
+</style>
+
+<body class="gray-bg">
+
+  <div class="wrapper wrapper-content animated fadeInUp">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="ibox">
+          <div class="ibox-title">
+            <h5>宣讲会</h5>
+            <div class="ibox-tools">
+              <a><input type="text" class="qsearch_input" name="qsearch" placeholder="快速查询" onkeypress="qsearch(this);" maxlength="20"></a>
+              <a data-toggle="modal" href="#search_modal" class="btn btn-primary btn-xs"><i class="fa fa-search"></i> 搜索条件</a>
+              <a onclick="refresh_list();" class="btn btn-primary btn-xs btn_refresh"><i class="fa fa-refresh"></i> 刷新</a>
+            </div>
+          </div>
+          <div class="ibox-content">
+
+              <ul class="nav nav-tabs" role="tablist" id="tabSearchList">
+                  <li role="presentation" class="active"><a href="#" data-type="" role="tab" data-toggle="tab" aria-expanded="true">所有宣讲会</a></li>
+              </ul>
+
+            <div class="project-list">
+              <table class="table table-condensed" id="test">
+                <tbody id="preachlist">
+                  <tr>
+                    <td class="project-status" style="width: 90px; text-align: center; border:none;"><p><span class="label label-warning">未报名</span></p><p><span class="label label-success">报名中</span></p></td>
+                    <td class="project-title" style="border: none;">
+                      <h3>融信集团第一事业部“信之翼”2018校园招聘</h3>
+                      <p>创建时间：04-02 09:33</p>
+                    </td>
+                    <td class="project-completion" style="width: 200px; border:none;">
+                      <p><i class="fa fa-institution" style="width: 15px;"></i> <strong>广东工业大学</strong></p>
+                      <p><i class="fa fa-map-marker" style="width: 15px;"></i> <strong style="color:#FF0000">大学城校园教2-220</strong></p>
+                      <p>开始时间：<strong style="color:#FF0000">2018-04-02 19:00</strong></p>
+                      <p>结束时间：2018-04-02 21:30</p>
+                    </td>
+                    <td class="project-completion" style="width: 170px; border:none;">
+                      <p>开始报名：04-02 09:31</p>
+                      <p>截止时间：04-02 19:00</p><p>　还有　<strong style="color:#FF0000;">3小时</strong></p><p></p><br>
+                      <p>我的报名：</p>
+                    </td>
+                    <td class="project-completion" style="text-align: center; border: none;">
+                      <a style="float: left;">
+                        <div class="forum-info" style="width: 80px;">
+                          <h3 class="views-number">362</h3>
+                          <div><small>浏览</small></div>
+                        </div>
+                      </a>
+                      <a style="float: left;">
+                        <div class="forum-info" style="width: 80px; border: none;">
+                          <h3 class="views-number">0</h3>
+                          <div><small>已报名</small></div>
+                          <h3><i class="fa fa-level-up"></i> 0</h3>
+                          <p><strong style="color:#FF0000;">限 100 人</strong></p>
+                        </div>
+                      </a>
+                    </td>
+                    <td class="project-actions" style="width: 130px; border: none;">
+                      <div class="btn-group">
+                        <button data-toggle="dropdown" class="btn btn-info btn-sm dropdown-toggle">更多操作<span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+
+                        </ul>
+                      </div>
+                    </td>
+                  </tr>                           
+                </tbody>
+              </table>
+            </div>
+                         
+
+            <div id="preach_page">
+              <div class="_mypage_ form-group">
+                <div class="_mypage_record_display col-sm-6" style="line-height: 35px;">
+                  <label class="_mypage_record_count control-label" style="float: left;">共 2032 条记录，第</label>
+                  <input type="text" class="_mypage_nowpage form-control" id="_mypage_nowpage" value="1" style="text-align: center; float: left; width: 60px;">
+                  <label class="_mypage_record_count control-label" style="float: left;">页，共 204 页，每页</label>
+                  <div class="_mypage_perpage_select col-sm-1" style="width: 110px;">
+                    <select id="_mypage_perpage_select" class="form-control">
+                      <option value="10" selected="selected">10</option>
+                      <option value="30">30</option>
+                      <option value="50">50</option>
+                      <option value="100">100</option>
+                      <option value="-1">全部</option>
+                    </select>
+                  </div>
+                </div>
+              <div class="_mypage_btn">
+                <ul>
+                  <li data-lp="1" class="prev disabled btn btn-white">首页</li>
+                  <li data-lp="1" class="prev disabled btn btn-white">
+                    <i class="fa fa-angle-double-left"></i>
+                  </li>
+                  <li data-lp="1" class="disabled btn btn-white">1</li>
+                  <li data-lp="2" class="btn btn-white">2</li>
+                  <li data-lp="3" class="btn btn-white">3</li>
+                  <li data-lp="4" class="btn btn-white">4</li>
+                  <li data-lp="5" class="btn btn-white">5</li>
+                  <li data-lp="2" class="next btn btn-white">
+                    <i class="fa fa-angle-double-right"></i>
+                  </li>
+                  <li data-lp="204" class="next btn btn-white">尾页</li>
+                </ul>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
+
+  <script type="text/javascript">
+      $(function(){
+          $("#SearchForm").append('<input type="hidden" name="state" id="inputSearch">');
+          $("#tabSearchList a").click(function(){
+              $("#inputSearch").val($(this).attr("data-type"));
+              refresh_list();
+          });
+      });
+  </script>
+
+
+</body>

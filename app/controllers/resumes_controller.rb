@@ -72,7 +72,7 @@ class ResumesController < ApplicationController
   # DELETE /resumes/1
   # DELETE /resumes/1.json
   def destroy
-    @resume = Resume.find(params[:id])
+    @resume = Resume.find_by_user_id(session[:user_id])
     @resume.destroy
 
     respond_to do |format|
