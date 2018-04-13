@@ -1,4 +1,5 @@
 class ResumesController < ApplicationController
+  skip_before_filter :verify_authenticity_token
   # GET /resumes
   # GET /resumes.json
   def index
@@ -13,7 +14,7 @@ class ResumesController < ApplicationController
   # GET /resumes/1
   # GET /resumes/1.json
   def show
-    @resume = Resume.find(params[:id])
+    @resume = Resume.find_by_user_id(session[:user_id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -58,14 +59,10 @@ class ResumesController < ApplicationController
   def update
     @resume = Resume.find_by_user_id(session[:user_id])
 
-    respond_to do |format|
-      if @resume.update_attributes(params[:resume])
-        format.html { redirect_to @resume, notice: 'Resume was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @resume.errors, status: :unprocessable_entity }
-      end
+    if @resume.update_attributes(params[:resume])
+      head :no_content
+    else
+      render json: @resume.errors, status: :unprocessable_entity
     end
   end
 

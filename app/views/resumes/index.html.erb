@@ -4,299 +4,423 @@
     <link href="http://cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">  
     <%= stylesheet_link_tag "style", :media => "all" %> 
 </head>
+<!--
+<form accept-charset="UTF-8" action="/resumes/1" class="edit_resume" id="edit_resume_1" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="_method" type="hidden" value="put"><input name="authenticity_token" type="hidden" value="KiL1vC2CT3qyx5CvA6GyPlsULStYvtnrncYicp6teto="></div>
 
+  <div class="field">
+    <label for="resume_resume_name">Resume name</label><br>
+    <input id="resume_resume_name" name="resume[resume_name]" size="30" type="text" value="技术类">
+  </div>
+  <div class="field">
+    <label for="resume_name">Name</label><br>
+    <input id="resume_name" name="resume[name]" size="30" type="text" value="leo">
+  </div>
+  <div class="field">
+    <label for="resume_profession">Profession</label><br>
+    <input id="resume_profession" name="resume[profession]" size="30" type="text" value="计算机">
+  </div>
+  <div class="field">
+    <label for="resume_birthplace">Birthplace</label><br>
+    <input id="resume_birthplace" name="resume[birthplace]" size="30" type="text" value="广东">
+  </div>
+  <div class="field">
+    <label for="resume_area">Area</label><br>
+    <input id="resume_area" name="resume[area]" size="30" type="text" value="广东">
+  </div>
+  <div class="field">
+    <label for="resume_sex">Sex</label><br>
+    <input id="resume_sex" name="resume[sex]" size="30" type="text" value="男">
+  </div>
+  <div class="field">
+    <label for="resume_birthday_year">Birthday year</label><br>
+    <input id="resume_birthday_year" name="resume[birthday_year]" type="number" value="1998">
+  </div>
+  <div class="field">
+    <label for="resume_education">Education</label><br>
+    <input id="resume_education" name="resume[education]" size="30" type="text" value="本科">
+  </div>
+  <div class="field">
+    <label for="resume_marriage">Marriage</label><br>
+    <input id="resume_marriage" name="resume[marriage]" size="30" type="text" value="未婚">
+  </div>
+  <div class="field">
+    <label for="resume_height">Height</label><br>
+    <input id="resume_height" name="resume[height]" type="number" value="189">
+  </div>
+  <div class="field">
+    <label for="resume_work_experience">Work experience</label><br>
+    <input id="resume_work_experience" name="resume[work_experience]" size="30" type="text" value="10年">
+  </div>
+  <div class="field">
+    <label for="resume_form">Form</label><br>
+    <input id="resume_form" name="resume[form]" size="30" type="text" value="全职">
+  </div>
+  <div class="field">
+    <label for="resume_job">Job</label><br>
+    <input id="resume_job" name="resume[job]" size="30" type="text" value="打杂">
+  </div>
+  <div class="field">
+    <label for="resume_area">Area</label><br>
+    <input id="resume_area" name="resume[area]" size="30" type="text" value="广东">
+  </div>
+  <div class="field">
+    <label for="resume_salary">Salary</label><br>
+    <input id="resume_salary" name="resume[salary]" size="30" type="text" value="888888">
+  </div>
+  <div class="field">
+    <label for="resume_phone">Phone</label><br>
+    <input id="resume_phone" name="resume[phone]" type="number" value="1888888">
+  </div>
+  <div class="field">
+    <label for="resume_QQ">Qq</label><br>
+    <input id="resume_QQ" name="resume[QQ]" type="number" value="66666">
+  </div>
+  <div class="field">
+    <label for="resume_email">Email</label><br>
+    <input id="resume_email" name="resume[email]" size="30" type="text" value="admin@qq.com">
+  </div>
+  <div class="field">
+    <label for="resume_blog">Blog</label><br>
+    <input id="resume_blog" name="resume[blog]" size="30" type="text" value="csdn">
+  </div>
+  <div class="field">
+    <label for="resume_address">Address</label><br>
+    <input id="resume_address" name="resume[address]" size="30" type="text" value="广东">
+  </div>
+  <div class="field">
+    <label for="resume_value">Value</label><br>
+    <textarea cols="40" id="resume_value" name="resume[value]" rows="20">优秀</textarea>
+  </div>
+  <div class="field">
+    <label for="resume_user_id">User</label><br>
+    <input id="resume_user_id" name="resume[user_id]" type="number" value="2">
+  </div>
+  <div class="actions">
+    <input name="commit" type="submit" value="Update Resume">
+  </div>
+</form>
+ -->
 <body class="gray-bg">
-  <div class="wrapper wrapper-content animated fadeInRight">
-    <div class="panel panel-info">
-        <div class="panel-heading"><i class="fa fa-info-circle"></i>　<b>一份合适的简历，能令你在求职过程中事半功倍！好好地制作你的简历吧。</b></div>
-    </div>
+      <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="panel panel-info">
+            <div class="panel-heading"><i class="fa fa-info-circle"></i>　<b>    一份合适的简历，能令你在求职过程中事半功倍！好好地制作你的简历吧。</b></div>
+        </div>
+    
+        <div class="row" style="margin-top: -20px;">
+        <form accept-charset="UTF-8" class="form-horizontal m-t" action="/resumes/<%= @resume.id %>" class="edit_resume" novalidate="novalidate" id="resume_basic" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="_method" type="hidden" value="put"></div>
 
-    <div class="row" style="margin-top: -20px;">
-      <form class="form-horizontal m-t" id="resume_basic" action="/resumes" method="get" novalidate="novalidate">
-      <div class="col-sm-12">
-        <div class="ibox float-e-margins">
-          <h5 class="text-center"><strong></strong></h5>
-          <div class="ibox-content">
-            <div class="row">
-              <div class="col-sm-7">
-                <div class="form-group">
-                  <label class="col-sm-3 control-label">
-                      <em class="text-danger">*</em>
-                      简历名称
-                  </label>
-                  <div class="col-sm-4">
-                    <div><input type="text" class="form-control" name="title" value="<%= @resume.resume_name %>"></div>
-                        <span class="help-block"><i class="fa fa-info-circle"></i> 简历名称不在网站显示，用于自己区分不同简历</span>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-sm-3 control-label">
-                      <em class="text-danger">*</em>
-                      真实姓名
-                  </label>
-                  <div class="col-sm-9">
-                    <div class="input-group">
-                      <div style="float: left;"><input type="text" class="form-control" name="fullname" value="<%= @resume.name %>"></div>
-                    </div>
-                    <span class="help-block"><i class="fa fa-info-circle"></i> 显示在简历中的姓名</span>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-sm-3 control-label">
-                      <em class="text-danger">*</em>
-                      专　业
-                  </label>
-                  <div class="col-sm-8">
-                    <div class="input-group">
-                      <input type="hidden" class="form-control" name="major" id="major" value="" maxlength="10" code_cn="">
-                      <input type="text" class="form-control" name="major_cn" id="major_cn" value="<%= @resume.profession %>">
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-sm-3 control-label">籍　贯</label>
-                  <div class="col-sm-8">
-                    <div class="input-group">
-                      <input type="hidden" class="form-control" name="householdaddress" id="householdaddress" value="" maxlength="10" code_cn="">
-                      <input type="text" class="form-control" name="householdaddress_cn" id="householdaddress_cn" value="<%= @resume.birthplace %>">
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-sm-3 control-label">现居住地区</label>
-                  <div class="col-sm-8">
-                    <div class="input-group">
-                      <input type="hidden" class="form-control" name="residence" id="residence" value="" maxlength="10" code_cn="">
-                      <input type="text" class="form-control" name="residence_cn" id="residence_cn" value="<%= @resume.area %>">
-                    </div>
-                  </div>
-                </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        <div class="ibox float-e-margins">
-          <div class="ibox-content">
-            <div class="row">
-              <div class="col-sm-7">
-                <div class="form-group">
-                  <label class="col-sm-3 control-label">
-                      <em class="text-danger">*</em>
-                      性　别
-                  </label>
-                  <div class="col-sm-8">
-                    <div class="radio radio-info radio-inline">
-                      <input type="radio" id="sex_radio_1" value="1" name="sex" checked="">
-                      <label for="sex_radio_1"> 男 </label>
-                    </div>
-                    <div class="radio radio-info radio-inline">
-                      <input type="radio" id="sex_radio_2" value="2" name="sex">
-                      <label for="sex_radio_2"> 女 </label>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group" id="birthdate">
-                  <label class="col-sm-3 control-label">
-                      <em class="text-danger">*</em>
-                      出生年份
-                  </label>
-                  <div class="col-sm-3">
-                    <div class="input-group date" id="datetimepicker1">
-                      <input type="text" class="form-control" name="birthdate" value="<%= @resume.birthday_year %>" maxlength="4" readonly="">
-                      <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-sm-3 control-label">
-                      <em class="text-danger">*</em>
-                      学　历
-                  </label>
-                  <div class="col-sm-8">
-                    <div class="input-group">
-                      <select class="form-control hidden" name="education"><option value="01">01</option><option value="11">11</option><option value="25">25</option><option value="31" selected="selected">31</option><option value="41">41</option></select>
-                      <select class="form-control m-b" name="education_cn" onchange="Custom.LinkSelect('education_cn', 'education');"><option value="博士研究生">博士研究生</option><option value="硕士研究生">硕士研究生</option><option value="双学位">双学位</option><option value="本科生" selected="selected">本科生</option><option value="专科生">专科生</option></select>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-sm-3 control-label">婚姻状况</label>
-                  <div class="col-sm-8">
-                    <div class="input-group">
-                      <select class="form-control hidden" name="marriage"><option value="1" selected="selected">1</option><option value="2">2</option><option value="3">3</option></select>
-                      <select class="form-control m-b" name="marriage_cn" onchange="Custom.LinkSelect('marriage_cn', 'marriage');"><option value="未婚" selected="selected">未婚</option><option value="已婚">已婚</option><option value="保密">保密</option></select>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-sm-3 control-label">
-                      <em class="text-danger">*</em>
-                      身　高
-                  </label>
-                  <div class="col-sm-3">
-                    <div class="input-group">
-                      <input type="text" class="form-control" name="height" value="<%= @resume.height %>" maxlength="3"> <span class="input-group-addon"> CM </span>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-sm-3 control-label">工作经验</label>
-                  <div class="col-sm-8">
-                    <div class="input-group">
-                      <select class="form-control hidden" name="experience"><option value="99" selected="selected">99</option><option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option></select>
-                      <select class="form-control m-b" name="experience_cn" onchange="Custom.LinkSelect('experience_cn', 'experience');"><option value="无经验" selected="selected">无经验</option><option value="1年以下">1年以下</option><option value="1-3年">1-3年</option><option value="3-5年">3-5年</option><option value="5-10年">5-10年</option><option value="10年以上">10年以上</option></select>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              </div>
-            </div>
-          </div>
-
-        <div class="ibox float-e-margins">
-          <div class="ibox-content">
-            <div class="row">
-              <div class="col-sm-7">
-                <div class="form-group">
-                  <label class="col-sm-3 control-label">
-                      <em class="text-danger">*</em>
-                      期望形式
-                  </label>
-                  <div class="col-sm-6">
-                    <div class="input-group">
-                      <select class="form-control hidden" name="nature"><option value="1">1</option><option value="2">2</option><option value="3">3</option></select>
-                      <select class="form-control m-b" name="nature_cn" onchange="Custom.LinkSelect('nature_cn', 'nature');"><option value="全职">全职</option><option value="兼职">兼职</option><option value="实习">实习</option></select>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-sm-3 control-label">
-                      <em class="text-danger">*</em>
-                      期望职位
-                  </label>
-                  <div class="col-sm-8">
-                    <div class="input-group">
-                      <input type="hidden" class="form-control" name="major" id="major" value="" maxlength="10" code_cn="">
-                      <input type="text" class="form-control" name="major_cn" id="major_cn" value="<%= @resume.job %>">
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-sm-3 control-label">
-                      <em class="text-danger">*</em>
-                      期望行业
-                  </label>
-                  <div class="col-sm-8">
-                    <div class="input-group">
-                      <input type="hidden" class="form-control" name="major" id="major"  maxlength="10" code_cn="">
-                      <input type="text" class="form-control" name="major_cn" id="major_cn" value="<%= @resume.major %>">
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-sm-3 control-label">
-                      <em class="text-danger">*</em>
-                      期望地区
-                  </label>
-                  <div class="col-sm-8">
-                    <div class="input-group">
-                      <input type="hidden" class="form-control" name="major" id="major"  maxlength="10" code_cn="">
-                      <input type="text" class="form-control" name="major_cn" id="major_cn" value="<%= @resume.hope_area %>">
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-sm-3 control-label">
-                      <em class="text-danger">*</em>
-                      期望薪酬
-                  </label>
-                  <div class="col-sm-6">
-                    <div class="input-group">
-                      <select class="form-control hidden" name="wage"><option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option></select>
-                      <select class="form-control m-b" name="wage_cn" onchange="Custom.LinkSelect('wage_cn', 'wage');"><option value="2000元以下/月">2000元以下/月</option><option value="2000～3000元/月">2000～3000元/月</option><option value="3000～4000元/月">3000～4000元/月</option><option value="4000～5000元/月">4000～5000元/月</option><option value="5000～8000元/月">5000～8000元/月</option><option value="8000～10000元/月">8000～10000元/月</option><option value="1万元以上">1万元以上</option></select>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-7">
-                <div class="form-group">
-                  <label class="col-sm-3 control-label">
-                      <em class="text-danger">*</em>
-                      联系电话
-                  </label>
-                  <div class="col-sm-8">
-                    <div><input type="text" class="form-control" name="resumes[phone]" value="<%= @resume.phone %>" maxlength="30"></div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-sm-3 control-label">联系QQ</label>
-                  <div class="col-sm-8">
-                    <div><input type="text" class="form-control" name="resumes[QQ]" value="<%= @resume.QQ %>" maxlength="30"></div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-sm-3 control-label">
-                      <em class="text-danger">*</em>
-                      电子邮箱
-                  </label>
-                  <div class="col-sm-8">
-                    <div>
-                      <input type="text" class="form-control" name="resumes[email]" value="<%= @resume.email %>" maxlength="50">
-                    </div>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label class="col-sm-3 control-label">主页/博客</label>
-                  <div class="col-sm-8">
-                    <div><input type="text" class="form-control" name="resumes[blog]" value="<%= @resume.blog %>" maxlength="50"></div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-sm-3 control-label">
-                      <em class="text-danger">*</em>
-                      通信地址
-                  </label>
-                  <div class="col-sm-8">
-                    <div><input type="text" class="form-control" name="resumes[address]" value="<%= @resume.address %>" maxlength="50"></div>
-                  </div>
-                </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="ibox float-e-margins">
-          <div class="ibox-content">
-            <div class="row">
-              <div class="col-sm-7">
-                <div class="form-group">
-                  <label class="col-sm-3 control-label">自我评价</label>
-                    <div class="col-sm-8">
-                      <div class="">
-                        <textarea class="form-control" name="resumes[value]" rows="4" value="<%= @resume.value %>" placeholder="请填写自我评价描述" style="width:100%; resize:none;"></textarea>
+          <!--<form class="form-horizontal m-t" id="resume_basic" action="/resumes/1" method="put" novalidate="novalidate">-->
+          <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+              <h5 class="text-center"><strong></strong></h5>
+              <div class="ibox-content">
+                <div class="row">
+                  <div class="col-sm-7">
+                    <div class="form-group">
+                      <label class="col-sm-3 control-label">
+                          <em class="text-danger">*</em>
+                          简历名称
+                      </label>
+                      <div class="col-sm-4">
+                        <div><input type="text" class="form-control" name="resume[resume_name]" value="<%= @resume.resume_name %>">    </div>
+                            <span class="help-block"><i class="fa fa-info-circle"></i>     简历名称不在网站显示，用于自己区分不同简历</span>
                       </div>
                     </div>
+                    <div class="form-group">
+                      <label class="col-sm-3 control-label">
+                          <em class="text-danger">*</em>
+                          真实姓名
+                      </label>
+                      <div class="col-sm-9">
+                        <div class="input-group">
+                          <div style="float: left;"><input type="text" class="form-control" name="resume[name]" value="<%= @resume.name %>"></div>
+                        </div>
+                        <span class="help-block"><i class="fa fa-info-circle"></i> 显示在简历中的姓名</span>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-3 control-label">
+                          <em class="text-danger">*</em>
+                          专　业
+                      </label>
+                      <div class="col-sm-8">
+                        <div class="input-group">
+                          <input type="hidden" class="form-control" name="major" id="major" value="" maxlength="10"     code_cn="">
+                          <input type="text" class="form-control" name="resume[profession]" id="major_cn" value="<%= @resume.profession %>">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-3 control-label">籍　贯</label>
+                      <div class="col-sm-8">
+                        <div class="input-group">
+                          <input type="hidden" class="form-control" name="householdaddress" id="householdaddress"     value="" maxlength="10" code_cn="">
+                          <input type="text" class="form-control" name="resume[birthplace]" id="householdaddress_cn"     value="<%= @resume.birthplace %>">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-3 control-label">现居住地区</label>
+                      <div class="col-sm-8">
+                        <div class="input-group">
+                          <input type="hidden" class="form-control" name="residence" id="residence" value=""     maxlength="10" code_cn="">
+                          <input type="text" class="form-control" name="resume[area]" id="residence_cn" value="<%= @resume.area %>">
+                        </div>
+                      </div>
+                    </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-            </div>
-          </div>
-          <div class="ibox float-e-margins">
-          <div class="ibox-content">
-            <div class="row">
-              <div class="col-sm-6 text-right">
-                <button class="btn btn-primary btn_save_basic" type="button"><i class="fa fa-check"></i>　提　交　</button>　
+            <div class="ibox float-e-margins">
+              <div class="ibox-content">
+                <div class="row">
+                  <div class="col-sm-7">
+                    <div class="form-group">
+                      <label class="col-sm-3 control-label">
+                          <em class="text-danger">*</em>
+                          性　别
+                      </label>
+                      <div class="col-sm-8">
+                        <div class="radio radio-info radio-inline">
+                          <input type="radio" id="sex_radio_1" value="1" name="sex" checked="">
+                          <label for="sex_radio_1"> 男 </label>
+                        </div>
+                        <div class="radio radio-info radio-inline">
+                          <input type="radio" id="sex_radio_2" value="2" name="sex">
+                          <label for="sex_radio_2"> 女 </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group" id="birthdate">
+                      <label class="col-sm-3 control-label">
+                          <em class="text-danger">*</em>
+                          出生年份
+                      </label>
+                      <div class="col-sm-3">
+                        <div class="input-group date" id="datetimepicker1">
+                          <input type="text" class="form-control" name="resume[birthday_year]" value="<%= @resume.birthday_year     %>" maxlength="4" readonly="">
+                          <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-3 control-label">
+                          <em class="text-danger">*</em>
+                          学　历
+                      </label>
+                      <div class="col-sm-8">
+                        <div class="input-group">
+                          <select class="form-control hidden" name="education"><option value="01">01</option><option     value="11">11</option><option value="25">25</option><option value="31" selected="selected">    31</option><option value="41">41</option></select>
+                          <select class="form-control m-b" name="education_cn" onchange="Custom.LinkSelect('    education_cn', 'education');"><option value="博士研究生">博士研究生</option><option value="    硕士研究生">硕士研究生</option><option value="双学位">双学位</option><option value="本科生"     selected="selected">本科生</option><option value="专科生">专科生</option></select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-3 control-label">婚姻状况</label>
+                      <div class="col-sm-8">
+                        <div class="input-group">
+                          <select class="form-control hidden" name="marriage"><option value="1" selected="selected">1    </option><option value="2">2</option><option value="3">3</option></select>
+                          <select class="form-control m-b" name="marriage_cn" onchange="Custom.LinkSelect('    marriage_cn', 'marriage');"><option value="未婚" selected="selected">未婚</option><option     value="已婚">已婚</option><option value="保密">保密</option></select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-3 control-label">
+                          <em class="text-danger">*</em>
+                          身　高
+                      </label>
+                      <div class="col-sm-3">
+                        <div class="input-group">
+                          <input type="text" class="form-control" name="resume[height]" value="<%= @resume.height %>"     maxlength="3"> <span class="input-group-addon"> CM </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-3 control-label">工作经验</label>
+                      <div class="col-sm-8">
+                        <div class="input-group">
+                          <select class="form-control hidden" name="experience"><option value="99" selected="selected    ">99</option><option value="01">01</option><option value="02">02</option><option value="03"    >03</option><option value="04">04</option><option value="05">05</option></select>
+                          <select class="form-control m-b" name="experience_cn" onchange="Custom.LinkSelect('    experience_cn', 'experience');"><option value="无经验" selected="selected">无经验</option>    <option value="1年以下">1年以下</option><option value="1-3年">1-3年</option><option value="    3-5年">3-5年</option><option value="5-10年">5-10年</option><option value="10年以上">10年以上</    option></select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+    
+            <div class="ibox float-e-margins">
+              <div class="ibox-content">
+                <div class="row">
+                  <div class="col-sm-7">
+                    <div class="form-group">
+                      <label class="col-sm-3 control-label">
+                          <em class="text-danger">*</em>
+                          期望形式
+                      </label>
+                      <div class="col-sm-6">
+                        <div class="input-group">
+                          <select class="form-control hidden" name="nature"><option value="1">1</option><option value    ="2">2</option><option value="3">3</option></select>
+                          <select class="form-control m-b" name="nature_cn" onchange="Custom.LinkSelect('nature_cn',     'nature');"><option value="全职">全职</option><option value="兼职">兼职</option><option     value="实习">实习</option></select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-3 control-label">
+                          <em class="text-danger">*</em>
+                          期望职位
+                      </label>
+                      <div class="col-sm-8">
+                        <div class="input-group">
+                          <input type="hidden" class="form-control" name="major" id="major" value="" maxlength="10"     code_cn="">
+                          <input type="text" class="form-control" name="resume[job]" id="major_cn" value="<%= @resume.job %>">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-3 control-label">
+                          <em class="text-danger">*</em>
+                          期望行业
+                      </label>
+                      <div class="col-sm-8">
+                        <div class="input-group">
+                          <input type="hidden" class="form-control" name="major" id="major"  maxlength="10" code_cn="    ">
+                          <input type="text" class="form-control" name="" id="major_cn" value="<%= @resume.major %>">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-3 control-label">
+                          <em class="text-danger">*</em>
+                          期望地区
+                      </label>
+                      <div class="col-sm-8">
+                        <div class="input-group">
+                          <input type="hidden" class="form-control" name="major" id="major"  maxlength="10" code_cn="    ">
+                          <input type="text" class="form-control" name="" id="major_cn" value="<%= @resume.hope_area %>">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-3 control-label">
+                          <em class="text-danger">*</em>
+                          期望薪酬
+                      </label>
+                      <div class="col-sm-6">
+                        <div class="input-group">
+                          <select class="form-control hidden" name="wage"><option value="01">01</option><option value    ="02">02</option><option value="03">03</option><option value="04">04</option><option value=    "05">05</option><option value="06">06</option><option value="07">07</option></select>
+                          <select class="form-control m-b" name="wage_cn" onchange="Custom.LinkSelect('wage_cn', '    wage');"><option value="2000元以下/月">2000元以下/月</option><option value="2000～3000元/月"    >2000～3000元/月</option><option value="3000～4000元/月">3000～4000元/月</option><option     value="4000～5000元/月">4000～5000元/月</option><option value="5000～8000元/月">5000～8000元/    月</option><option value="8000～10000元/月">8000～10000元/月</option><option value="1万元以上"    >1万元以上</option></select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-7">
+                    <div class="form-group">
+                      <label class="col-sm-3 control-label">
+                          <em class="text-danger">*</em>
+                          联系电话
+                      </label>
+                      <div class="col-sm-8">
+                        <div><input type="text" class="form-control" name="resume[phone]" value="<%= @resume.phone     %>" maxlength="30"></div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-3 control-label">联系QQ</label>
+                      <div class="col-sm-8">
+                        <div><input type="text" class="form-control" name="resume[QQ]" value="<%= @resume.QQ %>"     maxlength="30"></div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-3 control-label">
+                          <em class="text-danger">*</em>
+                          电子邮箱
+                      </label>
+                      <div class="col-sm-8">
+                        <div>
+                          <input type="text" class="form-control" name="resume[email]" value="<%= @resume.email %>"     maxlength="50">
+                        </div>
+                      </div>
+                    </div>
+    
+                    <div class="form-group">
+                      <label class="col-sm-3 control-label">主页/博客</label>
+                      <div class="col-sm-8">
+                        <div><input type="text" class="form-control" name="resume[blog]" value="<%= @resume.blog %>"     maxlength="50"></div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-3 control-label">
+                          <em class="text-danger">*</em>
+                          通信地址
+                      </label>
+                      <div class="col-sm-8">
+                        <div><input type="text" class="form-control" name="resume[address]" value="<%= @resume.    address %>" maxlength="50"></div>
+                      </div>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="ibox float-e-margins">
+              <div class="ibox-content">
+                <div class="row">
+                  <div class="col-sm-7">
+                    <div class="form-group">
+                      <label class="col-sm-3 control-label">自我评价</label>
+                        <div class="col-sm-8">
+                          <div class="">
+                            <textarea id="value" class="form-control" name="resume[value]" rows="4" value="<%= @resume.value %>" placeholder="请填写自我评价描述" style="width:100%; resize:none;"></textarea>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              </div>
+              <div class="ibox float-e-margins">
+              <div class="ibox-content">
+                <div class="row">
+                <!--
+                  <div class="actions col-sm-6 text-right">
+                    <input class="btn btn-primary btn_save_basic" name="commit" type="submit" value="">
+                  </div>
+                --> 
+                  <div class="actions col-sm-6 text-right">
+                    <button class="btn btn-primary btn_save_basic" name="commit" type="submit" id="sub"><i class="fa fa-check"></i>    　提　交　</button>　
+                  </div>
+                 
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </form>
     </div>
-  </form>
-</div>
-</div>
-<script type="text/javascript">
- $(function() {
- });
-</script>
+    </div>
+
+    <script type="text/javascript">
+      $(function() {
+/*
+        $("#sub").click(function(){
+
+          var form_values = $('#resume_basic').serialize();
+
+          $.ajax({
+            url: '<%= resumes_path %>/1' ,
+            type: 'POST',
+            data: {
+              _method: 'PUT',
+              menu: form_values
+            },
+            success: (function(){
+              alert('success');
+            })
+          });
+
+        });
+*/
+      });
+    </script>
+
 </body>

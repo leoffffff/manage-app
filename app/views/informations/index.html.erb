@@ -9,7 +9,12 @@
     <div class="panel panel-info">
         <div class="panel-heading"><i class="fa fa-info-circle"></i>　<b>请核实、完善个人基本信息。如关键项目需更改，请与辅导员或管理员联系。</b></div>
     </div>
+
+        <form accept-charset="UTF-8" action="/informations/<%= @information.id %>" class="form-horizontal m-t" id="edit" novalidate="novalidate" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="_method" type="hidden" value="put"></div>
+        
+        <!--
         <form class="form-horizontal m-t" id="edit_form" action="/informations" method="get" novalidate="novalidate">
+        -->
 
         <div class="ibox float-e-margins">
             <h5 class="text-center"><strong></strong></h5>
@@ -160,7 +165,7 @@
         <div class="ibox float-e-margins">
         <div class="ibox-content">
           <div class="row">
-            <div class="col-sm-6 text-right"><button class="btn btn-primary btn_save_basic" type="button"><i class="fa fa-check"></i>　提　交　</button>　</div>
+            <div class="col-sm-6 text-right"><button class="btn btn-primary btn_save_basic" type="submit"><i class="fa fa-check"></i>　提　交　</button>　</div>
           </div>
         </div>
         </div>
